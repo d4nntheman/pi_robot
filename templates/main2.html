@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<style>
+body {background-color: lightyellow}
+h1 {color:blue}
+
+button {
+	color: blue;
+	background:lightgrey;
+	border: 1px solid #000;
+	border-radius: 8px;
+	position: center;
+}
+
+</style>
+
+<body>
+<div style="text-align:center">
+<h1> Team 2 Robot Car Control <img style="height: 100px"src="/images/robot52.png"> </h1>
+<br><br>
+<button style="height: 50px; width: 100px" onmousedown="lighton()"><img style="height: 40px"src="/images/lighton.png"></button>
+<img hspace="20" style="padding-left: 200px">
+<button style="height: 50px; width: 100px" onmousedown="lightoff()"><img style="height: 35px"src="/images/lightoff.png"></button>
+<br><br>
+
+<span style="display:inline-block;padding:5px;border:1px solid #fc0; font-size: 140%;font-weight: bold;">
+<br>
+<button style="height: 75px; width: 75px" onmousedown="forward()" onmouseup="stop()"><img style="height: 65px"src="/images/forward.png"></button>
+<br><br><br><br>
+<img hspace="10" style="padding-left: 5px">
+<button style="height: 75px; width: 75px" onmousedown="left()" onmouseup="stop()"><img style="height: 65px"src="/images/left.png"></button>
+<img hspace="20" style="padding-left: 10px">
+<button style="height: 75px; width: 75px" onmousedown="stop()" onmouseup="stop()"><img style="height: 63px"src="/images/stop.png"></button>
+<img hspace="20" style="padding-left: 10px">
+<button style="height: 75px; width: 75px" onmousedown="right()" onmouseup="stop()"><img style="height: 65px"src="/images/right.png"></button>
+<img hspace="10" style="padding-left: 5px">
+<br><br><br><br>
+<button style="height: 75px; width: 75px" onmousedown="reverse()" onmouseup="stop()"><img style="height: 65px"src="/images/reverse.png"></button>
+
+<br><br><br>
+<p>Motor speed control</p>
+<img hspace="10" style="padding-left: 5px">
+<button style="height: 50px; width: 50px; font-size: 18px" onmousedown="nospeed()">0</button>
+<img hspace="30" style="padding-left: 20px">
+<button style="height: 50px; width: 50px; font-size: 18px" onmousedown="lowspeed()">--</button>
+<img hspace="30" style="padding-left: 20px">
+<button style="height: 50px; width: 50px; font-size: 18px" onmousedown="regularspeed()">==</button>
+<img hspace="30" style="padding-left: 20px">
+<button style="height: 50px; width: 50px; font-size: 18px" onmousedown="highspeed()">++</button>
+<img hspace="10" style="padding-left: 5px">
+
+<br><br>
+</span>
+
+</div>
+
+<script type="text/javascript">
+var xmlhttp;
+xmlhttp=new XMLHttpRequest();
+
+function lighton()
+{
+        xmlhttp.open("GET","/lighton",true);
+        xmlhttp.send();
+}
+function lightoff()
+{
+        xmlhttp.open("GET","lightoff",true);
+        xmlhttp.send();
+}
+function forward()
+{
+	xmlhttp.open("GET","forward",true);
+	xmlhttp.send();
+}
+function stop()
+{
+	xmlhttp.open("GET","stop",true);
+	xmlhttp.send();
+}
+function left()
+{
+	xmlhttp.open("GET","left",true);
+	xmlhttp.send();
+}
+function right()
+{
+	xmlhttp.open("GET","right",true);
+	xmlhttp.send();
+}
+function reverse()
+{
+	xmlhttp.open("GET","reverse",true);
+	xmlhttp.send();
+}
+
+function lowspeed()
+{
+	xmlhttp.open("GET","lowspeed",true);
+	xmlhttp.send();
+}
+function regularspeed()
+{
+	xmlhttp.open("GET","regularspeed",true);
+	xmlhttp.send();
+}
+function highspeed()
+{
+	xmlhttp.open("GET","highspeed",true);
+	xmlhttp.send();
+}
+function nospeed()
+{
+	xmlhttp.open("GET","nospeed",true);
+	xmlhttp.send();
+}
+
+</script>
+
+</body>
+</html>
+
+
+
