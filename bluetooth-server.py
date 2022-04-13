@@ -17,22 +17,20 @@ def receiveMessages():
             data = client_sock.recv(1024)
             for msg in data.split(b'\n'):
                 print("received [%s]" % msg)
-                """
-                if data == b'forward':
+                if msg == b'forward':
                     gpio.forward()
 
-                if data == b'reverse':
+                if msg == b'reverse':
                     gpio.backwards()
 
-                if data == b'left':
+                if msg == b'left':
                     gpio.left()
 
-                if data == b'right':
+                if msg == b'right':
                     gpio.right()
 
-                if data == b'stop':
+                if msg == b'stop':
                     gpio.stop()
-                """
 
             time.sleep(.01)
         client_sock.close()
