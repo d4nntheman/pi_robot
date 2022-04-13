@@ -13,24 +13,28 @@ def receiveMessages():
         
         client_sock,address = server_sock.accept()
         print("Accepted connection from " + str(address))
-        data = client_sock.recv(1024)
-        print("received [%s]" % data)
-        if data == b'forward':
-            gpio.forward()
+        while(1):
+            data = client_sock.recv(1024)
+            for msg in data.split(b'\n'):
+                print("received [%s]" % msg)
+                """
+                if data == b'forward':
+                    gpio.forward()
 
-        if data == b'reverse':
-            gpio.backwards()
+                if data == b'reverse':
+                    gpio.backwards()
 
-        if data == b'left':
-            gpio.left()
+                if data == b'left':
+                    gpio.left()
 
-        if data == b'right':
-            gpio.right()
+                if data == b'right':
+                    gpio.right()
 
-        if data == b'stop':
-            gpio.stop()
+                if data == b'stop':
+                    gpio.stop()
+                """
 
-        time.sleep(.1)
+            time.sleep(.01)
         client_sock.close()
         server_sock.close()
 
